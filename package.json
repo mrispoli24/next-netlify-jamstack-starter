@@ -11,10 +11,11 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
     "start": "cross-env NODE_ENV=dev npm-run-all --parallel start:app start:server",
     "start:app": "PORT=3000 node server.js",
-    "start:server": "netlify-lambda serve functions"
+    "start:server": "netlify-lambda serve functions",
+    "build:app": "next build && next export",
+    "build:lambda": "netlify-lambda build functions"
   },
   "dependencies": {
     "netlify-lambda": "^1.4.13",
